@@ -4,11 +4,12 @@ import requests
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
 
-def send_alert(product_name: str, price: float, link: str):
+def send_alert(product_name: str, store: str,  price: float, link: str):
     message = (
         f"⚠️ OFERTA\n"
         f"Produto: {product_name}\n"
-        f"Preço encontrado: R$ {price:.2f}\n"
+        f"Loja: {store}\n"
+        f"Preço encontrado: R$ {price:.2f}\n\n"
         f"Link: {link}"
     )
     

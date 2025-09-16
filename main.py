@@ -19,12 +19,13 @@ def main():
 
         for item in results:
             name = item["title"]
+            store = item["store"]
             price = item["price"]
             link = item["link"]
 
             if price <= target_price and price > 0:
                 print(f"Alerta! {name} está por R$ {price:.2f}")
-                send_alert(name, price, link)
+                send_alert(name, store, price, link)
 
 if __name__ == "__main__":
     main()
